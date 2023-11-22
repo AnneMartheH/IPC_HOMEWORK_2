@@ -25,3 +25,5 @@ task2e2TimeTests_c.c is where different implementations of the matBlockTPar was 
 
 The computer i have worked on has this processor: 11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz   2.80 GHz
 x64 based proccesor
+
+File for plotting is scaling.py that is under lecture 11 at this subjects course site. In order to plot the output from a file you need to copy the output from the function from the .o file. And then copy it into the scaling.py file. Here the plottet data must be put into the array wih the name T.
