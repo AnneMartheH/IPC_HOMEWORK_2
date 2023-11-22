@@ -1,6 +1,6 @@
 # IPC_HOMEWORK_2
 
-To run the files in this cluster you have to upload the file an the related pbs file to the unitn cluster. Then you hav eto run the related file by typing this instructions:
+To run the files in this cluster you have to upload the file an the related pbs file to the unitn cluster. The path in the pbs files have to be changed to were your files lie. Then you have to run the related file by typing this instructions:
 
 -qsub filename.pbs
 
