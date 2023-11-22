@@ -1,0 +1,42 @@
+#!/bin/bash
+# Job nBlocksTest
+#PBS -N nBlocksTest
+# Output files
+#PBS -o ./nBlocksTest.o
+#PBS -e ./nBlocksTest.e
+# Queue name
+#PBS -q short_cpuQ
+# Set the maximum wall time
+#PBS -l walltime=01:00:00
+# Number of nodes, cpus, threads and amount of memory
+#PBS -l select=1:ncpus=64:ompthreads=64:mem=1gb
+# Mail information
+#PBS -m abe
+#PBS -M oeydis.herland@unitn.it
+
+# Modules for C
+module load gcc91
+
+
+gcc() {
+    gcc-9.1.0 "$@"
+}
+gcc --version
+
+# To check the architecture
+lscpu
+
+# Select the working directory
+cd /home/oeydis.herland/homework2/am
+
+# The code should be compiled before running the code
+gcc -fopenmp nBlocksTest.c -o nBlocksTest.out 
+
+export OMP_NUM_THREADS=1; ./nBlocksTest.out
+export OMP_NUM_THREADS=2; ./nBlocksTest.out
+export OMP_NUM_THREADS=4; ./nBlocksTest.out
+export OMP_NUM_THREADS=8; ./nBlocksTest.out
+export OMP_NUM_THREADS=16; ./nBlocksTest.out
+export OMP_NUM_THREADS=32; ./nBlocksTest.out
+export OMP_NUM_THREADS=64; ./nBlocksTest.out
+
